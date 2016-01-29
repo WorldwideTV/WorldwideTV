@@ -10,13 +10,13 @@ import Argo
 import Curry
 
 struct WWChannels {
-    let categories: [WWCategory]
+    let countries: [WWCountry]
 }
 
 extension WWChannels: Decodable {
     static func decode(j: JSON) -> Decoded<WWChannels> {
         return curry(WWChannels.init)
-            <^> j <|| "categories"
+            <^> j <|| "countries"
 
     }
 }

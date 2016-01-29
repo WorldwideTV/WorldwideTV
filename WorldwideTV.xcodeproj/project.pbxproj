@@ -12,12 +12,12 @@
 		B3F7C2A31C5AE71D009298BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F7C2A21C5AE71D009298BA /* Assets.xcassets */; };
 		B3F7C2AE1C5AE71D009298BA /* WorldwideTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7C2AD1C5AE71D009298BA /* WorldwideTVTests.swift */; };
 		B3F7C2B91C5AEB51009298BA /* VidepPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7C2B81C5AEB51009298BA /* VidepPlayerController.swift */; };
-		DB945C2B1C5C063100F08002 /* WWItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB945C2A1C5C063100F08002 /* WWItem.swift */; };
+		DB945C2B1C5C063100F08002 /* WWChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB945C2A1C5C063100F08002 /* WWChannel.swift */; };
 		DBA46E271C5AFA5600146A27 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A3E91C5AF40D0017D048 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBA46E291C5AFA5600146A27 /* Argo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A3EA1C5AF40D0017D048 /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBA46E2B1C5AFA5600146A27 /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A3E71C5AF4080017D048 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBA46E2E1C5BA15B00146A27 /* WWChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */; };
-		DBA46E311C5BA9FA00146A27 /* WWCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA46E301C5BA9FA00146A27 /* WWCategory.swift */; };
+		DBA46E311C5BA9FA00146A27 /* WWCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA46E301C5BA9FA00146A27 /* WWCountry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +59,9 @@
 		DB14A3E71C5AF4080017D048 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/tvOS/Curry.framework; sourceTree = "<group>"; };
 		DB14A3E91C5AF40D0017D048 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/tvOS/Alamofire.framework; sourceTree = "<group>"; };
 		DB14A3EA1C5AF40D0017D048 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/tvOS/Argo.framework; sourceTree = "<group>"; };
-		DB945C2A1C5C063100F08002 /* WWItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWItem.swift; sourceTree = "<group>"; };
+		DB945C2A1C5C063100F08002 /* WWChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWChannel.swift; sourceTree = "<group>"; };
 		DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWChannels.swift; sourceTree = "<group>"; };
-		DBA46E301C5BA9FA00146A27 /* WWCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWCategory.swift; sourceTree = "<group>"; };
+		DBA46E301C5BA9FA00146A27 /* WWCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWCountry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */,
-				DBA46E301C5BA9FA00146A27 /* WWCategory.swift */,
-				DB945C2A1C5C063100F08002 /* WWItem.swift */,
+				DBA46E301C5BA9FA00146A27 /* WWCountry.swift */,
+				DB945C2A1C5C063100F08002 /* WWChannel.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -236,8 +236,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3F7C29E1C5AE71C009298BA /* HomeViewController.swift in Sources */,
-				DBA46E311C5BA9FA00146A27 /* WWCategory.swift in Sources */,
-				DB945C2B1C5C063100F08002 /* WWItem.swift in Sources */,
+				DBA46E311C5BA9FA00146A27 /* WWCountry.swift in Sources */,
+				DB945C2B1C5C063100F08002 /* WWChannel.swift in Sources */,
 				B3F7C29C1C5AE71C009298BA /* AppDelegate.swift in Sources */,
 				DBA46E2E1C5BA15B00146A27 /* WWChannels.swift in Sources */,
 				B3F7C2B91C5AEB51009298BA /* VidepPlayerController.swift in Sources */,

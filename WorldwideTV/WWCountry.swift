@@ -1,5 +1,5 @@
 //
-//  WWItem.swift
+//  Category.swift
 //  WorldwideTV
 //
 //  Created by Cesar Ferreira on 29/01/16.
@@ -10,16 +10,17 @@ import Foundation
 import Argo
 import Curry
 
-struct WWItem {
+struct WWCountry {
     let title: String
-    let url: String
+    let channels: [WWChannel]
+
 }
 
-extension WWItem: Decodable {
-    static func decode(j: JSON) -> Decoded<WWItem> {
-        return curry(WWItem.init)
+extension WWCountry: Decodable {
+    static func decode(j: JSON) -> Decoded<WWCountry> {
+        return curry(WWCountry.init)
             <^> j <| "title"
-            <*> j <| "url"
+            <*> j <|| "channels"
 
     }
 }

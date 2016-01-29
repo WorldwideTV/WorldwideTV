@@ -36,7 +36,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func handleResponse(decodedWWTV : Decoded<WWChannels>) {
-        print(decodedWWTV)
+        //print(decodedWWTV)
+        
+        for country in (decodedWWTV.value?.countries)! {
+            print(country.title)
+            for channel in country.channels {
+                print("--- \(channel.title)")
+            }
+        }
 
     }
     
