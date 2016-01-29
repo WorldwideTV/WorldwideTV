@@ -1,8 +1,13 @@
 import UIKit
+import Alamofire
+import Argo
+
 
 private let cellReuseIdentifier = "cellReuseIdentifier"
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    let channelsUrl : String = "https://raw.githubusercontent.com/WorldwideTV/TVChannels/master/channels.json"
     
     let channels: [(String, String)] = [
         ("RTP 1", "http://rtp-pull-live.hls.adaptive.level3.net/liverepeater/smil:rtp1.smil/playlist.m3u8"),
@@ -13,6 +18,29 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func loadView() {
         super.loadView()
         
+       
+        Alamofire.request(.GET, channelsUrl)
+            .responseJSON { response in
+                
+                let json: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: [])
+                
+
+                if let j = json {
+                    let decodedWWTV = WWChannels.decode(JSON.parse(j))
+                    self.handleResponse(decodedWWTV)
+                }
+                
+                self.setupView()
+        }
+        
+    }
+    
+    func handleResponse(decodedWWTV : Decoded<WWChannels>) {
+        print(decodedWWTV)
+
+    }
+    
+    func setupView() {
         view.addSubview(channelsTableView)
         
         var constraints: [NSLayoutConstraint] = []
@@ -20,8 +48,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         constraints += NSLayoutConstraint.constraintsWithVisualFormat("H:|-100-[channelsTableView]-100-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: .None, views: ["channelsTableView": channelsTableView])
         
         NSLayoutConstraint.activateConstraints(constraints)
-        
-        
     }
     
     func makeChannelsTableView() -> UITableView {
