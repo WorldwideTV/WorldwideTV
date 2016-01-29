@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3351DA31C5C0A7400A65000 /* AutoLayoutPlusTV.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3351DA21C5C0A7400A65000 /* AutoLayoutPlusTV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3F7C29C1C5AE71C009298BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7C29B1C5AE71C009298BA /* AppDelegate.swift */; };
 		B3F7C29E1C5AE71C009298BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7C29D1C5AE71C009298BA /* HomeViewController.swift */; };
 		B3F7C2A31C5AE71D009298BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F7C2A21C5AE71D009298BA /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B3351DA31C5C0A7400A65000 /* AutoLayoutPlusTV.framework in Embed Frameworks */,
 				DBA46E271C5AFA5600146A27 /* Alamofire.framework in Embed Frameworks */,
 				DBA46E291C5AFA5600146A27 /* Argo.framework in Embed Frameworks */,
 				DBA46E2B1C5AFA5600146A27 /* Curry.framework in Embed Frameworks */,
@@ -47,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B3351DA21C5C0A7400A65000 /* AutoLayoutPlusTV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoLayoutPlusTV.framework; path = Carthage/Build/tvOS/AutoLayoutPlusTV.framework; sourceTree = "<group>"; };
 		B3F7C2981C5AE71C009298BA /* WorldwideTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldwideTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F7C29B1C5AE71C009298BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3F7C29D1C5AE71C009298BA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		B3F7C28F1C5AE71C009298BA = {
 			isa = PBXGroup;
 			children = (
+				B3351DA21C5C0A7400A65000 /* AutoLayoutPlusTV.framework */,
 				DB14A3E91C5AF40D0017D048 /* Alamofire.framework */,
 				DB14A3EA1C5AF40D0017D048 /* Argo.framework */,
 				DB14A3E71C5AF4080017D048 /* Curry.framework */,
