@@ -9,6 +9,10 @@ class CountriesViewController: UIViewController, UITableViewDataSource, UITableV
         "United Kingdom",
     ]
     
+    var detailsViewController: ChannelsListViewController? {
+        return splitViewController?.viewControllers.last as? ChannelsListViewController
+    }
+    
     lazy var countriesTableView: UITableView = self.makeCountriesTableView()
     
     override func loadView() {
@@ -18,6 +22,14 @@ class CountriesViewController: UIViewController, UITableViewDataSource, UITableV
         setupConstraints()
         
         view.backgroundColor = UIColor.redColor()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let channelsViewController = detailsViewController {
+            channelsViewController.loadChannelsForCountry(countries[0])
+        }
     }
     
     func setupSubviews() {
@@ -70,9 +82,9 @@ class CountriesViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let country = countries[indexPath.row]
-        let playerScreen = VideoPlayerController(url: NSURL(string: country)!)
-        
-        showViewController(playerScreen, sender: self)
+        if let channelsViewController = detailsViewController {
+            let country = countries[indexPath.row]
+            channelsViewController.loadChannelsForCountry(country)
+        }
     }
 }

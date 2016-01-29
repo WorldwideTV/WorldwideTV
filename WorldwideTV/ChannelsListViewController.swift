@@ -45,6 +45,10 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         
         return t
     }
+    
+    func loadChannelsForCountry(country: String) {
+        
+    }
 
     // UICollectionViewDataSource
     
@@ -70,4 +74,3 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         return CGSize(width: 200, height: 200)
     }
 }
-
