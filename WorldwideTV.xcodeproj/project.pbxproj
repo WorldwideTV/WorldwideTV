@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B3351DA31C5C0A7400A65000 /* AutoLayoutPlusTV.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3351DA21C5C0A7400A65000 /* AutoLayoutPlusTV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3351DA51C5C0B1000A65000 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DA41C5C0B1000A65000 /* ChannelCell.swift */; };
-		B3351DA71C5C0F6700A65000 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DA61C5C0F6700A65000 /* HomeViewController.swift */; };
 		B3351DA91C5C0FDD00A65000 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DA81C5C0FDD00A65000 /* CountriesViewController.swift */; };
 		B3351DAB1C5C1EDF00A65000 /* WWChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAA1C5C1EDF00A65000 /* WWChannel.swift */; };
 		B3351DAD1C5C1EE500A65000 /* WWCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAC1C5C1EE500A65000 /* WWCountry.swift */; };
@@ -54,7 +53,6 @@
 /* Begin PBXFileReference section */
 		B3351DA21C5C0A7400A65000 /* AutoLayoutPlusTV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoLayoutPlusTV.framework; path = Carthage/Build/tvOS/AutoLayoutPlusTV.framework; sourceTree = "<group>"; };
 		B3351DA41C5C0B1000A65000 /* ChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
-		B3351DA61C5C0F6700A65000 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B3351DA81C5C0FDD00A65000 /* CountriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		B3351DAA1C5C1EDF00A65000 /* WWChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWChannel.swift; sourceTree = "<group>"; };
 		B3351DAC1C5C1EE500A65000 /* WWCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWCountry.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			children = (
 				DBA46E2F1C5BA16300146A27 /* models */,
 				B3F7C29B1C5AE71C009298BA /* AppDelegate.swift */,
-				B3351DA61C5C0F6700A65000 /* HomeViewController.swift */,
 				B3F7C29D1C5AE71C009298BA /* ChannelsListViewController.swift */,
 				B3351DA81C5C0FDD00A65000 /* CountriesViewController.swift */,
 				B3F7C2B81C5AEB51009298BA /* VideoPlayerController.swift */,
@@ -251,7 +248,6 @@
 				B3F7C29E1C5AE71C009298BA /* ChannelsListViewController.swift in Sources */,
 				B3351DAD1C5C1EE500A65000 /* WWCountry.swift in Sources */,
 				B3351DAB1C5C1EDF00A65000 /* WWChannel.swift in Sources */,
-				B3351DA71C5C0F6700A65000 /* HomeViewController.swift in Sources */,
 				B3F7C29C1C5AE71C009298BA /* AppDelegate.swift in Sources */,
 				B3351DA91C5C0FDD00A65000 /* CountriesViewController.swift in Sources */,
 				B3351DA51C5C0B1000A65000 /* ChannelCell.swift in Sources */,

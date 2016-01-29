@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let channelsViewController = ChannelsListViewController(nibName: .None, bundle: .None)
         let countriesViewController = CountriesViewController(nibName: .None, bundle: .None)
         
-        let homeViewController = HomeViewController(nibName: .None, bundle: .None)
+        let homeViewController = UISplitViewController(nibName: .None, bundle: .None)
         homeViewController.viewControllers = [countriesViewController, channelsViewController]
 
         window?.rootViewController = homeViewController
