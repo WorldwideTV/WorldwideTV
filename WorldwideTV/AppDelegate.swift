@@ -5,12 +5,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let homeViewController = HomeViewController(nibName: .None, bundle: .None)
+        let channelsViewController = ChannelsListViewController(nibName: .None, bundle: .None)
+        let countriesViewController = CountriesViewController(nibName: .None, bundle: .None)
         
+        let homeViewController = HomeViewController(nibName: .None, bundle: .None)
+        homeViewController.viewControllers = [countriesViewController, channelsViewController]
+
         window?.rootViewController = homeViewController
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.whiteColor()
