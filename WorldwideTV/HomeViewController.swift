@@ -20,6 +20,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         constraints += NSLayoutConstraint.constraintsWithVisualFormat("H:|-100-[channelsTableView]-100-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: .None, views: ["channelsTableView": channelsTableView])
         
         NSLayoutConstraint.activateConstraints(constraints)
+        
+        
     }
     
     func makeChannelsTableView() -> UITableView {
