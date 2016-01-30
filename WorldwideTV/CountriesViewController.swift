@@ -13,11 +13,7 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
     var detailsViewController: ChannelsListViewController? {
         return splitViewController?.viewControllers.last as? ChannelsListViewController
     }
-    
-    var homeViewController: HomeViewController? {
-        return splitViewController as? HomeViewController
-    }
-    
+       
     lazy var countriesTableView: UITableView = self.makeCountriesTableView()
     
     override func loadView() {
@@ -31,12 +27,13 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
     
     override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
         
-        let cell = context.nextFocusedView as! UITableViewCell
-        let indexPath = countriesTableView.indexPathForCell(cell)!
-        let country = countries![indexPath.row]
-        let channelsViewController = detailsViewController!
-        
-        channelsViewController.loadChannelsForCountry(country)
+        if let cell = context.nextFocusedView as? UITableViewCell,
+           let indexPath = countriesTableView.indexPathForCell(cell),
+           let country = countries?[indexPath.row],
+           let channelsViewController = detailsViewController {
+            
+            channelsViewController.loadChannelsForCountry(country)
+        }
     }
     
     func setupSubviews() {
