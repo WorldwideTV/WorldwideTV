@@ -75,4 +75,12 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: 200, height: 200)
     }
+    
+    func collectionView(collectionView: UICollectionView, shouldUpdateFocusInContext context: UICollectionViewFocusUpdateContext) -> Bool {
+        if let indexPath = context.nextFocusedIndexPath {
+            print("CELL index path: \(indexPath.row)")
+        }
+        
+        return true
+    }
 }
