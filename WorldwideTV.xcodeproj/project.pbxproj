@@ -12,6 +12,7 @@
 		B3351DA91C5C0FDD00A65000 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DA81C5C0FDD00A65000 /* CountriesViewController.swift */; };
 		B3351DAB1C5C1EDF00A65000 /* WWChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAA1C5C1EDF00A65000 /* WWChannel.swift */; };
 		B3351DAD1C5C1EE500A65000 /* WWCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAC1C5C1EE500A65000 /* WWCountry.swift */; };
+		B3351DAF1C5C36E800A65000 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAE1C5C36E800A65000 /* HomeViewController.swift */; };
 		B3F7C29C1C5AE71C009298BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7C29B1C5AE71C009298BA /* AppDelegate.swift */; };
 		B3F7C29E1C5AE71C009298BA /* ChannelsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7C29D1C5AE71C009298BA /* ChannelsListViewController.swift */; };
 		B3F7C2A31C5AE71D009298BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F7C2A21C5AE71D009298BA /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		B3351DA81C5C0FDD00A65000 /* CountriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		B3351DAA1C5C1EDF00A65000 /* WWChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWChannel.swift; sourceTree = "<group>"; };
 		B3351DAC1C5C1EE500A65000 /* WWCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWCountry.swift; sourceTree = "<group>"; };
+		B3351DAE1C5C36E800A65000 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B3F7C2981C5AE71C009298BA /* WorldwideTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldwideTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F7C29B1C5AE71C009298BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3F7C29D1C5AE71C009298BA /* ChannelsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsListViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				B3F7C2A21C5AE71D009298BA /* Assets.xcassets */,
 				B3F7C2A41C5AE71D009298BA /* Info.plist */,
 				DBB464121C5C22530067EC33 /* TVFetcherSingleton.swift */,
+				B3351DAE1C5C36E800A65000 /* HomeViewController.swift */,
 			);
 			path = WorldwideTV;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				B3351DAD1C5C1EE500A65000 /* WWCountry.swift in Sources */,
 				B3351DAB1C5C1EDF00A65000 /* WWChannel.swift in Sources */,
 				B3F7C29C1C5AE71C009298BA /* AppDelegate.swift in Sources */,
+				B3351DAF1C5C36E800A65000 /* HomeViewController.swift in Sources */,
 				B3351DA91C5C0FDD00A65000 /* CountriesViewController.swift in Sources */,
 				B3351DA51C5C0B1000A65000 /* ChannelCell.swift in Sources */,
 				DBA46E2E1C5BA15B00146A27 /* WWChannels.swift in Sources */,
