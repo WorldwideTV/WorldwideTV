@@ -11,17 +11,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let channelsViewController = ChannelsListViewController(nibName: .None, bundle: .None)
         let countriesViewController = CountriesViewController(nibName: .None, bundle: .None)
         
-        let homeViewController = HomeViewController(nibName: .None, bundle: .None)
+        let homeViewController = UISplitViewController(nibName: .None, bundle: .None)
         homeViewController.viewControllers = [countriesViewController, channelsViewController]
-        homeViewController.tabBarItem = UITabBarItem(title: "Tab 1", image: .None, tag: 0)
+        homeViewController.tabBarItem = UITabBarItem(title: "All Channels", image: .None, tag: 0)
         
         let searchViewController = SearchViewController(nibName: .None, bundle: .None)
-        searchViewController.tabBarItem = UITabBarItem(title: "Tab 2", image: .None, tag: 0)
+        searchViewController.tabBarItem = UITabBarItem(title: "Search", image: .None, tag: 0)
         
         let settingsViewController = SettingsViewController(nibName: .None, bundle: .None)
-        settingsViewController.tabBarItem = UITabBarItem(title: "Tab 3", image: .None, tag: 0)
+        settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: .None, tag: 0)
         
-        let tabBarController = UITabBarController(nibName: .None, bundle: .None)
+        let tabBarController = CustomTabBarController(nibName: .None, bundle: .None)
         tabBarController.viewControllers = [homeViewController, searchViewController, settingsViewController]
         
         window?.rootViewController = tabBarController

@@ -83,4 +83,10 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         
         return true
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let channel = channels![indexPath.row]
+        let videoController = VideoPlayerController(url: NSURL())
+        presentViewController(videoController, animated: true, completion: .None)
+    }
 }
