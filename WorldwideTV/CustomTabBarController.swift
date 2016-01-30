@@ -1,6 +1,6 @@
 import UIKit
 
-class HomeViewController: UISplitViewController {
+class CustomTabBarController: UITabBarController {
     
     lazy var loadingOverlay: UIView = self.makeLoadingOverlay()
     
@@ -17,9 +17,11 @@ class HomeViewController: UISplitViewController {
             self.countries = countries
             self.loadingOverlay.removeFromSuperview()
             
-            if let countriesViewController = self.viewControllers.first as? CountriesViewController {
+            if let homeViewController = self.viewControllers?.first as? UISplitViewController,
+               let countriesViewController = homeViewController.viewControllers.first as? CountriesViewController {
                 countriesViewController.countries = countries
             }
+            
         }
     }
     
@@ -35,7 +37,7 @@ class HomeViewController: UISplitViewController {
         constraints += NSLayoutConstraint.withFormat([
             "V:|[loadingOverlay]|",
             "H:|[loadingOverlay]|",
-        ], views: views)
+            ], views: views)
         
         NSLayoutConstraint.activateConstraints(constraints)
     }
@@ -44,7 +46,7 @@ class HomeViewController: UISplitViewController {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
         v.backgroundColor = UIColor.blackColor()
-
+        
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.startAnimating()
