@@ -41,8 +41,6 @@ class ChannelCell: UICollectionViewCell {
         logoView.boundInside(contentView)
         
         NSLayoutConstraint.activateConstraints(constraints)
-        
-   
     }
     
     func makeLogoView() -> UIImageView {
