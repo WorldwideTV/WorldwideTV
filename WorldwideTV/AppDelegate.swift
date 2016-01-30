@@ -13,8 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let homeViewController = HomeViewController(nibName: .None, bundle: .None)
         homeViewController.viewControllers = [countriesViewController, channelsViewController]
-
-        window?.rootViewController = homeViewController
+        homeViewController.tabBarItem = UITabBarItem(title: "Tab 1", image: .None, tag: 0)
+        
+        let searchViewController = SearchViewController(nibName: .None, bundle: .None)
+        searchViewController.tabBarItem = UITabBarItem(title: "Tab 2", image: .None, tag: 0)
+        
+        let settingsViewController = SettingsViewController(nibName: .None, bundle: .None)
+        settingsViewController.tabBarItem = UITabBarItem(title: "Tab 3", image: .None, tag: 0)
+        
+        let tabBarController = UITabBarController(nibName: .None, bundle: .None)
+        tabBarController.viewControllers = [homeViewController, searchViewController, settingsViewController]
+        
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.whiteColor()
         
