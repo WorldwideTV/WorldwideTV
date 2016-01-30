@@ -32,7 +32,6 @@ class TVFetcherSingleton {
                     let decodedWWTV = WWChannels.decode(JSON.parse(j))
                     self.countries = decodedWWTV.value!.countries
 
-                   // self.printInfo()
                     onCompletion(self.countries!)
                 }
         }

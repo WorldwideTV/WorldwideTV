@@ -4,13 +4,23 @@ class HomeViewController: UISplitViewController {
     
     lazy var loadingOverlay: UIView = self.makeLoadingOverlay()
     
+    var countries: [WWCountry]?
+    
     override func loadView() {
         super.loadView()
         
         setupSubviews()
         setupConstraints()
         
-        // Load countries/channels and then: loadingOverlay.removeFromSuperview()
+        // Load countries/channels:
+        TVFetcherSingleton.sharedInstance.makeRequest { countries in
+            self.countries = countries
+            self.loadingOverlay.removeFromSuperview()
+            
+            if let countriesViewController = self.viewControllers.first as? CountriesViewController {
+                countriesViewController.countries = countries
+            }
+        }
     }
     
     func setupSubviews() {

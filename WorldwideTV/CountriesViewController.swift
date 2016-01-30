@@ -4,13 +4,18 @@ private let cellReuseIdentifier = "cellReuseIdentifier"
 
 class CountriesViewController: UIViewController, UITableViewDataSource {
     
-    let countries: [String] = [
-        "Portugal",
-        "United Kingdom",
-    ]
+    var countries: [WWCountry]? {
+        didSet {
+            countriesTableView.reloadData()
+        }
+    }
     
     var detailsViewController: ChannelsListViewController? {
         return splitViewController?.viewControllers.last as? ChannelsListViewController
+    }
+    
+    var homeViewController: HomeViewController? {
+        return splitViewController as? HomeViewController
     }
     
     lazy var countriesTableView: UITableView = self.makeCountriesTableView()
@@ -28,7 +33,7 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
         
         let cell = context.nextFocusedView as! UITableViewCell
         let indexPath = countriesTableView.indexPathForCell(cell)!
-        let country = countries[indexPath.row]
+        let country = countries![indexPath.row]
         let channelsViewController = detailsViewController!
         
         channelsViewController.loadChannelsForCountry(country)
@@ -62,12 +67,12 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
+        return countries?.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier)
-        let country = countries[indexPath.row]
+        let country = countries![indexPath.row]
         
         if let _ = cell {
             // Cell initialised
@@ -75,7 +80,7 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
             cell = UITableViewCell(style: .Default, reuseIdentifier: cellReuseIdentifier)
         }
         
-        cell?.textLabel?.text = country
+        cell?.textLabel?.text = country.title
         
         return cell!
     }
