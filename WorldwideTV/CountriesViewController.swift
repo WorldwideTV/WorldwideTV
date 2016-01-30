@@ -22,7 +22,7 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
         setupSubviews()
         setupConstraints()
         
-        view.backgroundColor = UIColor.redColor()
+        view.backgroundColor = UIColor.yellowColor()
     }
     
     override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
