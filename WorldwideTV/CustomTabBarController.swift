@@ -54,7 +54,7 @@ class CustomTabBarController: UITabBarController {
     }
     
     func fetchData() {
-        TVFetcherSingleton.sharedInstance.makeRequest { countries in
+        TVFetcherService.sharedInstance.getChannelData { countries in
             if let obtainedCountries = countries where obtainedCountries.count > 0 {
                 self.loadingOverlay.removeFromSuperview()
                 

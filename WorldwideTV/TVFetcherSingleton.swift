@@ -9,20 +9,20 @@ import Foundation
 import Alamofire
 import Argo
 
-class TVFetcherSingleton {
+class TVFetcherService {
     
     let CHANNELS_URL: String = "https://raw.githubusercontent.com/WorldwideTV/TVChannels/master/channels.json"
 
     var countries: [WWCountry]?
     
-    class var sharedInstance : TVFetcherSingleton {
+    class var sharedInstance : TVFetcherService {
         struct Singleton {
-            static let instance = TVFetcherSingleton()
+            static let instance = TVFetcherService()
         }
         return Singleton.instance
     }
     
-    func makeRequest(onCompletion: [WWCountry]? -> ()) {
+    func getChannelData(onCompletion: [WWCountry]? -> ()) {
         Alamofire.request(.GET, CHANNELS_URL)
             .responseJSON { response in
                 let json = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: [])
