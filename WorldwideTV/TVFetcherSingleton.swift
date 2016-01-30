@@ -9,20 +9,20 @@ import Foundation
 import Alamofire
 import Argo
 
-class ChannelFetcherSingleton {
+class TVFetcherSingleton {
     
-    let CHANNELS_URL : String = "https://raw.githubusercontent.com/WorldwideTV/TVChannels/master/channels.json"
+    let CHANNELS_URL: String = "https://raw.githubusercontent.com/WorldwideTV/TVChannels/master/channels.json"
 
-    var countries : [WWCountry]?
+    var countries: [WWCountry]?
     
-    class var sharedInstance :ChannelFetcherSingleton {
+    class var sharedInstance : TVFetcherSingleton {
         struct Singleton {
-            static let instance = ChannelFetcherSingleton()
+            static let instance = TVFetcherSingleton()
         }
         return Singleton.instance
     }
     
-    func makeRequest() {
+    func makeRequest(onCompletion: [WWCountry] -> ()) {
         Alamofire.request(.GET, CHANNELS_URL)
             .responseJSON { response in
                 
@@ -32,7 +32,8 @@ class ChannelFetcherSingleton {
                     let decodedWWTV = WWChannels.decode(JSON.parse(j))
                     self.countries = decodedWWTV.value!.countries
 
-                    self.printInfo()
+                   // self.printInfo()
+                    onCompletion(self.countries!)
                 }
         }
     }

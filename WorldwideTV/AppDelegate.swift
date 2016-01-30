@@ -18,7 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.whiteColor()
         
-        ChannelFetcherSingleton.sharedInstance.makeRequest()
+        
+        TVFetcherSingleton.sharedInstance.makeRequest { countries in
+            print(countries)
+        }
         
         return true
     }
