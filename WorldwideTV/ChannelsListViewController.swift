@@ -7,14 +7,13 @@ private let cellReuseIdentifier = "cellReuseIdentifier"
 
 class ChannelsListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    let channels: [(String, String)] = [
-        ("RTP 1", "http://rtp-pull-live.hls.adaptive.level3.net/liverepeater/smil:rtp1.smil/playlist.m3u8"),
-    ]
+    var channels: [WWChannel]?
     
     lazy var channelsCollectionView: UICollectionView = self.makeChannelsCollectionView()
     
     override func loadView() {
         super.loadView()
+        print("load view do ChannelsListViewController")
         
         setupSubviews()
         setupConstraints()
@@ -47,25 +46,28 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func loadChannelsForCountry(country: WWCountry) {
-        print("Loading channels for \(country.channels)")
+        print("Loading channels for \(country.title)")
+        self.channels = country.channels
+        channelsCollectionView.reloadData()
     }
 
     // UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return channels.count
+        return channels?.count ?? 0
     }
     
     // UICollectionViewDelegateFlowLayout
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let dequeuedCell = collectionView.dequeueReusableCellWithReuseIdentifier(cellReuseIdentifier, forIndexPath: indexPath)
-        
+        let channel = channels![indexPath.row]
+
         guard let cell = dequeuedCell as? ChannelCell else {
             return dequeuedCell
         }
         
-        cell.titleLabel.text = "HELLO"
+        cell.titleLabel.text = channel.title
         
         return cell
     }
