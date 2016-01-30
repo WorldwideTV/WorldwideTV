@@ -7,6 +7,10 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
     var countries: [WWCountry]? {
         didSet {
             countriesTableView.reloadData()
+            
+            if let firstCountry = countries?.first {
+                setChannelsForCountry(firstCountry)
+            }
         }
     }
     
@@ -28,11 +32,10 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
     override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
         
         if let cell = context.nextFocusedView as? UITableViewCell,
-           let indexPath = countriesTableView.indexPathForCell(cell),
-           let country = countries?[indexPath.row],
-           let channelsViewController = detailsViewController {
-            
-            channelsViewController.loadChannelsForCountry(country)
+            let indexPath = countriesTableView.indexPathForCell(cell),
+            let country = countries?[indexPath.row] {
+                
+            setChannelsForCountry(country)
         }
     }
     
@@ -47,7 +50,7 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
         constraints += NSLayoutConstraint.withFormat([
             "V:|[countriesTableView]|",
             "H:|[countriesTableView]|",
-            ], views: views)
+        ], views: views)
         
         NSLayoutConstraint.activateConstraints(constraints)
     }
@@ -59,6 +62,10 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
         t.dataSource = self
         
         return t
+    }
+    
+    func setChannelsForCountry(country: WWCountry) {
+        detailsViewController?.channels = country.channels
     }
     
     // MARK: - UITableViewDataSource
