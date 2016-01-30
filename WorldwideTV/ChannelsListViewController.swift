@@ -47,7 +47,7 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func loadChannelsForCountry(country: String) {
-        
+        print("Loading channels for \(country)")
     }
 
     // UICollectionViewDataSource

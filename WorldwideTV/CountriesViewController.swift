@@ -2,7 +2,7 @@ import UIKit
 
 private let cellReuseIdentifier = "cellReuseIdentifier"
 
-class CountriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CountriesViewController: UIViewController, UITableViewDataSource {
     
     let countries: [String] = [
         "Portugal",
@@ -24,12 +24,14 @@ class CountriesViewController: UIViewController, UITableViewDataSource, UITableV
         view.backgroundColor = UIColor.redColor()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
         
-        if let channelsViewController = detailsViewController {
-            channelsViewController.loadChannelsForCountry(countries[0])
-        }
+        let cell = context.nextFocusedView as! UITableViewCell
+        let indexPath = countriesTableView.indexPathForCell(cell)!
+        let country = countries[indexPath.row]
+        let channelsViewController = detailsViewController!
+        
+        channelsViewController.loadChannelsForCountry(country)
     }
     
     func setupSubviews() {
@@ -52,7 +54,6 @@ class CountriesViewController: UIViewController, UITableViewDataSource, UITableV
         let t = UITableView()
         t.translatesAutoresizingMaskIntoConstraints = false
         t.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        t.delegate = self
         t.dataSource = self
         
         return t
@@ -79,12 +80,4 @@ class CountriesViewController: UIViewController, UITableViewDataSource, UITableV
         return cell!
     }
     
-    // MARK: - UITableViewDelegate
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let channelsViewController = detailsViewController {
-            let country = countries[indexPath.row]
-            channelsViewController.loadChannelsForCountry(country)
-        }
-    }
 }
