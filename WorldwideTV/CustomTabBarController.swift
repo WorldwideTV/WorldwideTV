@@ -47,12 +47,17 @@ class CustomTabBarController: UITabBarController {
         v.translatesAutoresizingMaskIntoConstraints = false
         v.backgroundColor = UIColor.blackColor()
         
+        let startupImage = UIImageView(image: UIImage(named: "startup")!)
+        startupImage.translatesAutoresizingMaskIntoConstraints = false
+        v.addSubview(startupImage)
+        
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.startAnimating()
         v.addSubview(indicator)
         
         var constraints: [NSLayoutConstraint] = []
+        constraints += startupImage.likeParent()
         constraints += indicator.centeredInParent()
         
         NSLayoutConstraint.activateConstraints(constraints)
