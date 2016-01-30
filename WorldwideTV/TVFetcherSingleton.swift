@@ -22,17 +22,18 @@ class TVFetcherSingleton {
         return Singleton.instance
     }
     
-    func makeRequest(onCompletion: [WWCountry] -> ()) {
+    func makeRequest(onCompletion: [WWCountry]? -> ()) {
         Alamofire.request(.GET, CHANNELS_URL)
             .responseJSON { response in
-                
-                let json: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: [])
+                let json = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: [])
                 
                 if let j = json {
                     let decodedWWTV = WWChannels.decode(JSON.parse(j))
-                    self.countries = decodedWWTV.value!.countries
+                    self.countries = decodedWWTV.value?.countries
 
-                    onCompletion(self.countries!)
+                    onCompletion(self.countries)
+                } else {
+                    onCompletion(.None)
                 }
         }
     }

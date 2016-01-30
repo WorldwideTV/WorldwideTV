@@ -4,25 +4,13 @@ class CustomTabBarController: UITabBarController {
     
     lazy var loadingOverlay: UIView = self.makeLoadingOverlay()
     
-    var countries: [WWCountry]?
-    
     override func loadView() {
         super.loadView()
         
         setupSubviews()
         setupConstraints()
         
-        // Load countries/channels:
-        TVFetcherSingleton.sharedInstance.makeRequest { countries in
-            self.countries = countries
-            self.loadingOverlay.removeFromSuperview()
-            
-            if let homeViewController = self.viewControllers?.first as? UISplitViewController,
-               let countriesViewController = homeViewController.viewControllers.first as? CountriesViewController {
-                countriesViewController.countries = countries
-            }
-            
-        }
+        fetchData()
     }
     
     func setupSubviews() {
@@ -63,6 +51,32 @@ class CustomTabBarController: UITabBarController {
         NSLayoutConstraint.activateConstraints(constraints)
         
         return v
+    }
+    
+    func fetchData() {
+        TVFetcherSingleton.sharedInstance.makeRequest { countries in
+            if let obtainedCountries = countries where obtainedCountries.count > 0 {
+                self.loadingOverlay.removeFromSuperview()
+                
+                if let homeViewController = self.viewControllers?.first as? UISplitViewController,
+                    let countriesViewController = homeViewController.viewControllers.first as? CountriesViewController {
+                        countriesViewController.countries = countries
+                }
+            } else {
+                self.showErrorMessage()
+            }
+        }
+    }
+    
+    func showErrorMessage() {
+        let retryAction = UIAlertAction(title: "Retry", style: .Default, handler: { action in
+            self.fetchData()
+        })
+        
+        let alert = UIAlertController(title: "Error", message: "Failed to load channels list.", preferredStyle: .Alert)
+        alert.addAction(retryAction)
+        
+        presentViewController(alert, animated: true, completion: .None)
     }
     
 }
