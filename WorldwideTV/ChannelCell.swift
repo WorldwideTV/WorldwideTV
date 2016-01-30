@@ -2,8 +2,8 @@ import UIKit
 
 class ChannelCell: UICollectionViewCell {
     
-    lazy var logoView: UIImageView  = self.makeLogoView()
-    lazy var titleLabel: UILabel    = self.makeTitleLabel()
+    lazy var logoView: UIImageView      = self.makeLogoView()
+    lazy var titleLabel: UILabel        = self.makeTitleLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,9 +25,7 @@ class ChannelCell: UICollectionViewCell {
     
     func setupConstraints() {
         let views = ["logoView": logoView, "titleLabel": titleLabel]
-        
         var constraints: [NSLayoutConstraint] = []
-        
         
     }
     

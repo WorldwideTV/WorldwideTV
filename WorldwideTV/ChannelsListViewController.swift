@@ -2,6 +2,7 @@ import UIKit
 import Alamofire
 import Argo
 import AutoLayoutPlusTV
+import Kingfisher
 
 private let cellReuseIdentifier = "cellReuseIdentifier"
 
@@ -68,6 +69,9 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         }
         
         cell.titleLabel.text = channel.title
+
+        cell.logoView.kf_setImageWithURL(NSURL(string: channel.thumbnail)!)
+
         
         return cell
     }
