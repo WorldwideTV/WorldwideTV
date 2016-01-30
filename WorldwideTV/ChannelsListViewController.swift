@@ -8,7 +8,12 @@ private let cellReuseIdentifier = "cellReuseIdentifier"
 
 class ChannelsListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var channels: [WWChannel]?
+    var channels: [WWChannel]? {
+        didSet {
+            print("New list of channels obtained")
+            channelsCollectionView.reloadData()
+        }
+    }
     
     lazy var channelsCollectionView: UICollectionView = self.makeChannelsCollectionView()
     
@@ -46,12 +51,6 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         return t
     }
     
-    func loadChannelsForCountry(country: WWCountry) {
-        print("Loading channels for \(country.title)")
-        self.channels = country.channels
-        channelsCollectionView.reloadData()
-    }
-
     // UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
