@@ -27,7 +27,7 @@
 		DBA46E291C5AFA5600146A27 /* Argo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A3EA1C5AF40D0017D048 /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBA46E2B1C5AFA5600146A27 /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A3E71C5AF4080017D048 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBA46E2E1C5BA15B00146A27 /* WWChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */; };
-		DBB464131C5C22530067EC33 /* TVFetcherSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB464121C5C22530067EC33 /* TVFetcherSingleton.swift */; };
+		DBB464131C5C22530067EC33 /* TVFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB464121C5C22530067EC33 /* TVFetcherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +83,7 @@
 		DB14A3EA1C5AF40D0017D048 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/tvOS/Argo.framework; sourceTree = "<group>"; };
 		DB56EF991C5C5185009E4900 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/tvOS/Kingfisher.framework; sourceTree = "<group>"; };
 		DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWChannels.swift; sourceTree = "<group>"; };
-		DBB464121C5C22530067EC33 /* TVFetcherSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVFetcherSingleton.swift; sourceTree = "<group>"; };
+		DBB464121C5C22530067EC33 /* TVFetcherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVFetcherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +200,7 @@
 		DB56EF981C5C473A009E4900 /* misc */ = {
 			isa = PBXGroup;
 			children = (
-				DBB464121C5C22530067EC33 /* TVFetcherSingleton.swift */,
+				DBB464121C5C22530067EC33 /* TVFetcherService.swift */,
 			);
 			name = misc;
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBB464131C5C22530067EC33 /* TVFetcherSingleton.swift in Sources */,
+				DBB464131C5C22530067EC33 /* TVFetcherService.swift in Sources */,
 				B3F7C29E1C5AE71C009298BA /* ChannelsListViewController.swift in Sources */,
 				B3351DCC1C5C512100A65000 /* SettingsViewController.swift in Sources */,
 				B3351DAD1C5C1EE500A65000 /* WWCountry.swift in Sources */,
