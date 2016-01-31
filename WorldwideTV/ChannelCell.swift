@@ -36,6 +36,7 @@ class ChannelCell: UICollectionViewCell {
         let i = UIImageView()
         i.translatesAutoresizingMaskIntoConstraints = false
         i.backgroundColor = UIColor.yellowColor()
+        i.adjustsImageWhenAncestorFocused = true
 
         return i
     }
