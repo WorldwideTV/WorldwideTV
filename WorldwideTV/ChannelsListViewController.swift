@@ -34,8 +34,8 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         
         var constraints: [NSLayoutConstraint] = []
         constraints += NSLayoutConstraint.withFormat([
-            "V:|-100-[channelsCollectionView]-100-|",
-            "H:|-100-[channelsCollectionView]-100-|",
+            "V:|[channelsCollectionView]|",
+            "H:|[channelsCollectionView]|",
             ], views: views)
         
         NSLayoutConstraint.activateConstraints(constraints)
@@ -93,4 +93,14 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
             presentViewController(videoController, animated: true, completion: .None)
         }
     }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 80
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
+    }
+
 }
