@@ -12,6 +12,7 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         didSet {
             print("New list of channels obtained")
             channelsCollectionView.reloadData()
+            channelsCollectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: .None, animated: false)
         }
     }
     
