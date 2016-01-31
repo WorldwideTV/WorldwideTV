@@ -10,8 +10,6 @@ class ChannelCell: UICollectionViewCell {
         
         setupSubviews()
         setupConstraints()
-        
-        contentView.backgroundColor = UIColor.brownColor()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -19,15 +17,22 @@ class ChannelCell: UICollectionViewCell {
     }
     
     func setupSubviews() {
-        contentView.addSubview(logoView)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(logoView)
+        
     }
     
     func setupConstraints() {
-        //let views = ["logoView": logoView, "titleLabel": titleLabel]
+        let views = ["logoView": logoView, "titleLabel": titleLabel]
         
         var constraints: [NSLayoutConstraint] = []
-        constraints += logoView.likeParent()
+        constraints += NSLayoutConstraint.withFormat([
+            "V:|[logoView(==200)]",
+            "V:[titleLabel]|",
+            "H:|[logoView]|",
+            ], views: views)
+        
+        constraints.append(titleLabel.centeredInParentX())
         
         NSLayoutConstraint.activateConstraints(constraints)
     }
