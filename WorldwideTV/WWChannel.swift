@@ -25,3 +25,15 @@ extension WWChannel: Decodable {
 
     }
 }
+
+extension WWChannel: Hashable {
+    var hashValue: Int {
+        return title.hashValue ^ thumbnail.hashValue ^ url.hashValue
+    }
+}
+
+extension WWChannel: Equatable {}
+
+func ==(lhs: WWChannel, rhs: WWChannel) -> Bool {
+    return lhs.title == rhs.title && lhs.thumbnail == rhs.thumbnail && lhs.url == rhs.url
+}
