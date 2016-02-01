@@ -21,6 +21,8 @@ class SearchResultsController: ChannelsListViewController, UISearchResultsUpdati
         
         let everything = matchingCountries.flatMap{ $0.channels } + matchingChannels
         
-        channels = Array(Set<WWChannel>(everything))
+        if everything.count > 0 {
+            channels = Array(Set<WWChannel>(everything))
+        }
     }
 }
