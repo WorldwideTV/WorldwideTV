@@ -17,8 +17,9 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
     var detailsViewController: ChannelsListViewController? {
         return splitViewController?.viewControllers.last as? ChannelsListViewController
     }
-       
-    lazy var countriesTableView: UITableView = self.makeCountriesTableView()
+    
+    lazy var appLogo: UIImageView               = self.makeAppLogo()
+    lazy var countriesTableView: UITableView    = self.makeCountriesTableView()
     
     override func loadView() {
         super.loadView()
@@ -40,19 +41,30 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
     }
     
     func setupSubviews() {
+        view.addSubview(appLogo)
         view.addSubview(countriesTableView)
     }
     
     func setupConstraints() {
-        let views = ["countriesTableView": countriesTableView]
+        let views = ["countriesTableView": countriesTableView, "appLogo": appLogo]
         
         var constraints: [NSLayoutConstraint] = []
         constraints += NSLayoutConstraint.withFormat([
-            "V:|[countriesTableView]|",
-            "H:|[countriesTableView]|",
+            "V:|-60-[appLogo(==100)]-60-[countriesTableView]-60-|",
+            "H:|-90-[countriesTableView]-90-|",
+            "H:[appLogo(==200)]",
         ], views: views)
         
+        constraints.append(appLogo.centeredInParentX())
+        
         NSLayoutConstraint.activateConstraints(constraints)
+    }
+    
+    func makeAppLogo() -> UIImageView {
+        let i = UIImageView(image: UIImage(named: "App Icon - Small"))
+        i.translatesAutoresizingMaskIntoConstraints = false
+        
+        return i
     }
     
     func makeCountriesTableView() -> UITableView {

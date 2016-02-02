@@ -95,13 +95,12 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         }
     }
     
-    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 80
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100)
+        return UIEdgeInsets(top: 60, left: 90, bottom: 60, right: 90)
     }
 
 }
