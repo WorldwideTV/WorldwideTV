@@ -3,4 +3,5 @@ github "thoughtbot/Argo" "v2.2.0"
 github "thoughtbot/Curry" "v1.4.0"
 github "ruipfcosta/AutoLayoutPlus" "master"
 github "onevcat/Kingfisher" ~> 2.0
+github "radex/SwiftyUserDefaults" "master"
 

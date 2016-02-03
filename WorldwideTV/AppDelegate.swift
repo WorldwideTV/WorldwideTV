@@ -39,6 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.whiteColor()
         
+        AutomaticSortManager.sharedInstance.sumLaunchCount()
+        AutomaticSortManager.sharedInstance.readStuff()
+        
+        
         return true
     }
 }

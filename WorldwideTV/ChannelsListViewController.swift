@@ -10,7 +10,6 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
     
     var channels: [WWChannel]? {
         didSet {
-            print("New list of channels obtained")
             channelsCollectionView.reloadData()
             
             if channels?.count > 0 {
