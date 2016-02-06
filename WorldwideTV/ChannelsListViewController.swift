@@ -22,7 +22,6 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
     
     override func loadView() {
         super.loadView()
-        print("load view do ChannelsListViewController")
         
         setupSubviews()
         setupConstraints()
@@ -81,9 +80,9 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func collectionView(collectionView: UICollectionView, shouldUpdateFocusInContext context: UICollectionViewFocusUpdateContext) -> Bool {
-        if let indexPath = context.nextFocusedIndexPath {
-            print("CHANNEL: \(channels![indexPath.row].title)")
-        }
+        //if let indexPath = context.nextFocusedIndexPath {
+            //print("CHANNEL: \(channels![indexPath.row].title)")
+        //}
         
         return true
     }
@@ -93,6 +92,7 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         
         if let url = NSURL(string: channel.url) {
             let videoController = VideoPlayerController(url: url)
+            print("I TAPPED on \(channel.title)")
             presentViewController(videoController, animated: true, completion: .None)
         }
     }

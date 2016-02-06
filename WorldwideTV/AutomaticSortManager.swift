@@ -10,10 +10,6 @@ extension DefaultsKeys {
 
 class AutomaticSortManager {
     
-    //let CHANNELS_URL: String = "https://raw.githubusercontent.com/WorldwideTV/TVChannels/master/channels.json"
-
-//    var countries: [WWCountry]?
-    
     class var sharedInstance : AutomaticSortManager {
         struct Singleton {
             static let instance = AutomaticSortManager()
@@ -22,13 +18,20 @@ class AutomaticSortManager {
     }
   
     func readStuff() {
-        Defaults[.username] = "joe"
         print("launch count: \(Defaults[.launchCount])")
 
     }
     
     func sumLaunchCount() {
-        Defaults[.launchCount]++
+        Defaults[.launchCount]+=1
+    }
+    
+    func sumChannel(country: String, channel: String) {
+        // todo
+    }
+    
+    func getChannelCount(country: String, channel: String) {
+        // todo
     }
     
     
