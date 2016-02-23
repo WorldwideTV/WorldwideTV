@@ -87,18 +87,12 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath)
         let country = countries![indexPath.row]
         
-        if let _ = cell {
-            // Cell initialised
-        } else {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: cellReuseIdentifier)
-        }
+        cell.textLabel?.text = country.title
         
-        cell?.textLabel?.text = country.title
-        
-        return cell!
+        return cell
     }
     
 }
