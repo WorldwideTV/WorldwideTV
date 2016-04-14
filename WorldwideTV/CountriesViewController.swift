@@ -77,6 +77,7 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
     }
     
     func setChannelsForCountry(country: WWCountry) {
+        detailsViewController?.country = country.title
         detailsViewController?.channels = country.channels
     }
     
