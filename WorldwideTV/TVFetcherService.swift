@@ -12,8 +12,15 @@ import Argo
 class TVFetcherService {
     
     let CHANNELS_URL: String = "https://raw.githubusercontent.com/WorldwideTV/TVChannels/master/channels.json"
+    
+    let USE_REMOTE_LIST: Bool = true
 
     var countries: [WWCountry]?
+    
+    private var channelsUrl : String {
+        return self.USE_REMOTE_LIST ? CHANNELS_URL :
+            NSBundle.mainBundle().URLForResource("channels", withExtension: "json")!.absoluteString
+    }
     
     class var sharedInstance : TVFetcherService {
         struct Singleton {
@@ -23,7 +30,9 @@ class TVFetcherService {
     }
     
     func getChannelData(onCompletion: [WWCountry]? -> ()) {
-        Alamofire.request(.GET, CHANNELS_URL)
+        let channelsUrl = self.channelsUrl
+        NSLog("Getting channels from \(channelsUrl)")
+        Alamofire.request(.GET, channelsUrl)
             .responseJSON { response in
                 let json = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: [])
                 
