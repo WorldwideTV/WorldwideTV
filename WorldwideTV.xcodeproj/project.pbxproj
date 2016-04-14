@@ -30,6 +30,7 @@
 		DB1DA6E21C616E4C005979C1 /* AutomaticSortManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1DA6E11C616E4C005979C1 /* AutomaticSortManager.swift */; };
 		DBA46E2E1C5BA15B00146A27 /* WWChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */; };
 		DBB464131C5C22530067EC33 /* TVFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB464121C5C22530067EC33 /* TVFetcherService.swift */; };
+		E627ED871CBF82D800B31045 /* channels.json in Resources */ = {isa = PBXBuildFile; fileRef = E627ED861CBF82D800B31045 /* channels.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		DB56EF991C5C5185009E4900 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/tvOS/Kingfisher.framework; sourceTree = "<group>"; };
 		DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWChannels.swift; sourceTree = "<group>"; };
 		DBB464121C5C22530067EC33 /* TVFetcherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVFetcherService.swift; sourceTree = "<group>"; };
+		E627ED861CBF82D800B31045 /* channels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = channels.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		B3AA17BE1C5D3F5400202D1B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E627ED861CBF82D800B31045 /* channels.json */,
 				B3F7C2A21C5AE71D009298BA /* Assets.xcassets */,
 				B3AA17B71C5D3D4B00202D1B /* Images */,
 			);
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3F7C2A31C5AE71D009298BA /* Assets.xcassets in Resources */,
+				E627ED871CBF82D800B31045 /* channels.json in Resources */,
 				B3AA17BB1C5D3D5700202D1B /* vital_co.lsr in Resources */,
 				B3AA17BD1C5D3DA800202D1B /* startup.png in Resources */,
 			);
@@ -324,8 +328,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/usr/local/bin/carthage copy-frameworks";
-			shellScript = "";
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
