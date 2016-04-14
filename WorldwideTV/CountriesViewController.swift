@@ -2,7 +2,7 @@ import UIKit
 
 private let cellReuseIdentifier = "cellReuseIdentifier"
 
-class CountriesViewController: UIViewController, UITableViewDataSource {
+class CountriesViewController: UIViewController {
     
     var countries: [WWCountry]? {
         didSet {
@@ -80,7 +80,9 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
         detailsViewController?.channels = country.channels
     }
     
-    // MARK: - UITableViewDataSource
+}
+
+extension CountriesViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries?.count ?? 0

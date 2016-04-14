@@ -6,7 +6,7 @@ import Kingfisher
 
 private let cellReuseIdentifier = "cellReuseIdentifier"
 
-class ChannelsListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ChannelsListViewController: UIViewController {
     
     let sortManager: AutomaticSortManager
     var country: String!
@@ -64,19 +64,22 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         
         return t
     }
-    
-    // UICollectionViewDataSource
+}
+
+extension ChannelsListViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return channels?.count ?? 0
     }
     
-    // UICollectionViewDelegateFlowLayout
+}
+
+extension ChannelsListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let dequeuedCell = collectionView.dequeueReusableCellWithReuseIdentifier(cellReuseIdentifier, forIndexPath: indexPath)
         let channel = channels![indexPath.row]
-
+        
         guard let cell = dequeuedCell as? ChannelCell else {
             return dequeuedCell
         }
@@ -93,7 +96,7 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
     
     func collectionView(collectionView: UICollectionView, shouldUpdateFocusInContext context: UICollectionViewFocusUpdateContext) -> Bool {
         //if let indexPath = context.nextFocusedIndexPath {
-            //print("CHANNEL: \(channels![indexPath.row].title)")
+        //print("CHANNEL: \(channels![indexPath.row].title)")
         //}
         
         return true

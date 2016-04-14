@@ -1,6 +1,6 @@
 import UIKit
 
-class SearchResultsController: ChannelsListViewController, UISearchResultsUpdating {
+class SearchResultsController: ChannelsListViewController {
     
     let channelsService: TVFetcherService
     
@@ -18,8 +18,10 @@ class SearchResultsController: ChannelsListViewController, UISearchResultsUpdati
         super.loadView()
         view.backgroundColor = UIColor.purpleColor()
     }
-       
-    // UISearchResultsUpdating
+
+}
+
+extension SearchResultsController: UISearchResultsUpdating {
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         guard let allCountries = channelsService.countries else {
@@ -39,4 +41,5 @@ class SearchResultsController: ChannelsListViewController, UISearchResultsUpdati
         
         channels = Array(Set<WWChannel>(results))
     }
+    
 }
