@@ -31,6 +31,16 @@
 		DBA46E2E1C5BA15B00146A27 /* WWChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */; };
 		DBB464131C5C22530067EC33 /* TVFetcherServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB464121C5C22530067EC33 /* TVFetcherServiceRemote.swift */; };
 		E627ED8D1CBFC82C00B31045 /* TVFetcherServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627ED8C1CBFC82C00B31045 /* TVFetcherServiceStub.swift */; };
+		E627EDD41CC0109F00B31045 /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E627EDD31CC0109F00B31045 /* TVServices.framework */; };
+		E627EDD71CC0109F00B31045 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627EDD61CC0109F00B31045 /* ServiceProvider.swift */; };
+		E627EDDB1CC0109F00B31045 /* TopShelf.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E627EDD11CC0109F00B31045 /* TopShelf.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E627EDE11CC010FC00B31045 /* AutomaticSortManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1DA6E11C616E4C005979C1 /* AutomaticSortManager.swift */; };
+		E627EDE21CC010FC00B31045 /* TVFetcherServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB464121C5C22530067EC33 /* TVFetcherServiceRemote.swift */; };
+		E627EDE31CC010FC00B31045 /* TVFetcherServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627ED8C1CBFC82C00B31045 /* TVFetcherServiceStub.swift */; };
+		E627EDE41CC010FC00B31045 /* WWChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */; };
+		E627EDE51CC010FC00B31045 /* WWChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAA1C5C1EDF00A65000 /* WWChannel.swift */; };
+		E627EDE61CC010FC00B31045 /* WWCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAC1C5C1EE500A65000 /* WWCountry.swift */; };
+		E627EDE71CC0110700B31045 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A3EA1C5AF40D0017D048 /* Argo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +51,28 @@
 			remoteGlobalIDString = B3F7C2971C5AE71C009298BA;
 			remoteInfo = WorldwideTV;
 		};
+		E627EDD91CC0109F00B31045 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3F7C2901C5AE71C009298BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E627EDD01CC0109F00B31045;
+			remoteInfo = TopShelf;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E627EDDF1CC0109F00B31045 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E627EDDB1CC0109F00B31045 /* TopShelf.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B3351DA21C5C0A7400A65000 /* AutoLayoutPlusTV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoLayoutPlusTV.framework; path = Carthage/Build/tvOS/AutoLayoutPlusTV.framework; sourceTree = "<group>"; };
@@ -72,6 +103,10 @@
 		DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWChannels.swift; sourceTree = "<group>"; };
 		DBB464121C5C22530067EC33 /* TVFetcherServiceRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVFetcherServiceRemote.swift; sourceTree = "<group>"; };
 		E627ED8C1CBFC82C00B31045 /* TVFetcherServiceStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVFetcherServiceStub.swift; sourceTree = "<group>"; };
+		E627EDD11CC0109F00B31045 /* TopShelf.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TopShelf.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E627EDD31CC0109F00B31045 /* TVServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TVServices.framework; path = System/Library/Frameworks/TVServices.framework; sourceTree = SDKROOT; };
+		E627EDD61CC0109F00B31045 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		E627EDD81CC0109F00B31045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +127,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E627EDCE1CC0109F00B31045 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E627EDD41CC0109F00B31045 /* TVServices.framework in Frameworks */,
+				E627EDE71CC0110700B31045 /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +172,8 @@
 				B3F7C29A1C5AE71C009298BA /* WorldwideTV */,
 				B3F7C2A41C5AE71D009298BA /* Info.plist */,
 				B3F7C2AC1C5AE71D009298BA /* WorldwideTVTests */,
+				E627EDD51CC0109F00B31045 /* TopShelf */,
+				E627EDD21CC0109F00B31045 /* Frameworks */,
 				B3F7C2991C5AE71C009298BA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,6 +183,7 @@
 			children = (
 				B3F7C2981C5AE71C009298BA /* WorldwideTV.app */,
 				B3F7C2A91C5AE71D009298BA /* WorldwideTVTests.xctest */,
+				E627EDD11CC0109F00B31045 /* TopShelf.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,10 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				DB56EF981C5C473A009E4900 /* misc */,
+				DBA46E2F1C5BA16300146A27 /* models */,
 				DB56EF971C5C4720009E4900 /* tables */,
 				DB56EF961C5C4719009E4900 /* delegates */,
 				DB56EF951C5C470C009E4900 /* viewControllers */,
-				DBA46E2F1C5BA16300146A27 /* models */,
 				B3AA17BE1C5D3F5400202D1B /* Resources */,
 			);
 			path = WorldwideTV;
@@ -212,6 +259,23 @@
 			name = models;
 			sourceTree = "<group>";
 		};
+		E627EDD21CC0109F00B31045 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E627EDD31CC0109F00B31045 /* TVServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E627EDD51CC0109F00B31045 /* TopShelf */ = {
+			isa = PBXGroup;
+			children = (
+				E627EDD61CC0109F00B31045 /* ServiceProvider.swift */,
+				E627EDD81CC0109F00B31045 /* Info.plist */,
+			);
+			path = TopShelf;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,10 +287,12 @@
 				B3F7C2951C5AE71C009298BA /* Frameworks */,
 				B3F7C2961C5AE71C009298BA /* Resources */,
 				B3FE8A811C7BD3D6006A9CC2 /* Copy carthage frameworks */,
+				E627EDDF1CC0109F00B31045 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E627EDDA1CC0109F00B31045 /* PBXTargetDependency */,
 			);
 			name = WorldwideTV;
 			productName = WorldwideTV;
@@ -251,13 +317,30 @@
 			productReference = B3F7C2A91C5AE71D009298BA /* WorldwideTVTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E627EDD01CC0109F00B31045 /* TopShelf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E627EDDE1CC0109F00B31045 /* Build configuration list for PBXNativeTarget "TopShelf" */;
+			buildPhases = (
+				E627EDCD1CC0109F00B31045 /* Sources */,
+				E627EDCE1CC0109F00B31045 /* Frameworks */,
+				E627EDCF1CC0109F00B31045 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TopShelf;
+			productName = TopShelf;
+			productReference = E627EDD11CC0109F00B31045 /* TopShelf.appex */;
+			productType = "com.apple.product-type.tv-app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B3F7C2901C5AE71C009298BA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = WorldwideTV;
 				TargetAttributes = {
@@ -267,6 +350,9 @@
 					B3F7C2A81C5AE71D009298BA = {
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = B3F7C2971C5AE71C009298BA;
+					};
+					E627EDD01CC0109F00B31045 = {
+						CreatedOnToolsVersion = 7.3;
 					};
 				};
 			};
@@ -285,6 +371,7 @@
 			targets = (
 				B3F7C2971C5AE71C009298BA /* WorldwideTV */,
 				B3F7C2A81C5AE71D009298BA /* WorldwideTVTests */,
+				E627EDD01CC0109F00B31045 /* TopShelf */,
 			);
 		};
 /* End PBXProject section */
@@ -301,6 +388,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B3F7C2A71C5AE71D009298BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E627EDCF1CC0109F00B31045 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -362,6 +456,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E627EDCD1CC0109F00B31045 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E627EDD71CC0109F00B31045 /* ServiceProvider.swift in Sources */,
+				E627EDE51CC010FC00B31045 /* WWChannel.swift in Sources */,
+				E627EDE21CC010FC00B31045 /* TVFetcherServiceRemote.swift in Sources */,
+				E627EDE11CC010FC00B31045 /* AutomaticSortManager.swift in Sources */,
+				E627EDE31CC010FC00B31045 /* TVFetcherServiceStub.swift in Sources */,
+				E627EDE41CC010FC00B31045 /* WWChannels.swift in Sources */,
+				E627EDE61CC010FC00B31045 /* WWCountry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -369,6 +477,11 @@
 			isa = PBXTargetDependency;
 			target = B3F7C2971C5AE71C009298BA /* WorldwideTV */;
 			targetProxy = B3F7C2AA1C5AE71D009298BA /* PBXContainerItemProxy */;
+		};
+		E627EDDA1CC0109F00B31045 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E627EDD01CC0109F00B31045 /* TopShelf */;
+			targetProxy = E627EDD91CC0109F00B31045 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -459,6 +572,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/",
@@ -477,6 +591,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/",
@@ -514,6 +629,40 @@
 			};
 			name = Release;
 		};
+		E627EDDC1CC0109F00B31045 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = TopShelf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = WorldwideTV.WorldwideTV.TopShelf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		E627EDDD1CC0109F00B31045 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = TopShelf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = WorldwideTV.WorldwideTV.TopShelf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -543,6 +692,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E627EDDE1CC0109F00B31045 /* Build configuration list for PBXNativeTarget "TopShelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E627EDDC1CC0109F00B31045 /* Debug */,
+				E627EDDD1CC0109F00B31045 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
