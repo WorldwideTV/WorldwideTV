@@ -8,6 +8,7 @@ private let cellReuseIdentifier = "cellReuseIdentifier"
 
 class ChannelsListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    let sortManager: AutomaticSortManager
     var country: String!
     
     var channels: [WWChannel]? {
@@ -21,6 +22,16 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     lazy var channelsCollectionView: UICollectionView = self.makeChannelsCollectionView()
+    
+    init(sortManager: AutomaticSortManager) {
+        self.sortManager = sortManager
+        
+        super.init(nibName: .None, bundle: .None)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         super.loadView()
@@ -93,7 +104,7 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         let channel = channels![indexPath.row]
         
         if let url = NSURL(string: channel.url) {
-            let videoController = VideoPlayerController(url: url, channel: channel.title, country: self.country)
+            let videoController = VideoPlayerController(sortManager: sortManager, url: url, channel: channel.title, country: self.country)
             print("I TAPPED on \(channel.title)")
             presentViewController(videoController, animated: true, completion: .None)
         }

@@ -3,11 +3,11 @@ import UIKit
 class SearchResultsController: ChannelsListViewController, UISearchResultsUpdating {
     
     let channelsService: TVFetcherService
-
-    init(channelsService: TVFetcherService) {
+    
+    init(channelsService: TVFetcherService, sortManager: AutomaticSortManager) {
         self.channelsService = channelsService
         
-        super.init(nibName: .None, bundle: .None)
+        super.init(sortManager: sortManager)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -9,9 +9,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         let channelsService = TVFetcherServiceRemote()
+        let sortManager = AutomaticSortManager()
         
         // All Channels screen
-        let channelsViewController = ChannelsListViewController(nibName: .None, bundle: .None)
+        let channelsViewController = ChannelsListViewController(sortManager: sortManager)
         let countriesViewController = CountriesViewController(nibName: .None, bundle: .None)
         
         let homeViewController = UISplitViewController(nibName: .None, bundle: .None)
@@ -19,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         homeViewController.tabBarItem = UITabBarItem(title: "All Channels", image: .None, tag: 0)
         
         // Search screen
-        let searchResultsController = SearchResultsController(channelsService: channelsService)
+        let searchResultsController = SearchResultsController(channelsService: channelsService, sortManager: sortManager)
         
         let searchController = UISearchController(searchResultsController: searchResultsController)
         searchController.searchResultsUpdater = searchResultsController
@@ -41,8 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.whiteColor()
         
-        AutomaticSortManager.sharedInstance.sumLaunchCount()
-        AutomaticSortManager.sharedInstance.readStuff()
+        sortManager.sumLaunchCount()
+        sortManager.readStuff()
         
         
         return true
