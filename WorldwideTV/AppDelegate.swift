@@ -8,6 +8,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
+        let channelsService = TVFetcherServiceRemote()
+        
         // All Channels screen
         let channelsViewController = ChannelsListViewController(nibName: .None, bundle: .None)
         let countriesViewController = CountriesViewController(nibName: .None, bundle: .None)
@@ -17,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         homeViewController.tabBarItem = UITabBarItem(title: "All Channels", image: .None, tag: 0)
         
         // Search screen
-        let searchResultsController = SearchResultsController(nibName: .None, bundle: .None)
+        let searchResultsController = SearchResultsController(channelsService: channelsService)
         
         let searchController = UISearchController(searchResultsController: searchResultsController)
         searchController.searchResultsUpdater = searchResultsController
@@ -32,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: .None, tag: 0)
         
         
-        let tabBarController = CustomTabBarController(nibName: .None, bundle: .None)
+        let tabBarController = CustomTabBarController(channelsService: channelsService)
         tabBarController.viewControllers = [homeViewController, searchViewNavController, settingsViewController]
         
         window?.rootViewController = tabBarController

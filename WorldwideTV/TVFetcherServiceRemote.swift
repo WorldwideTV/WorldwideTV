@@ -1,5 +1,5 @@
 //
-//  TVFetcherServiceRemote.swift
+//  TVFetcherServiceProtocol.swift
 //  WorldwideTV
 //
 //  Created by Antonio Ribeiro on 14/04/16.
@@ -10,7 +10,13 @@ import Foundation
 import Alamofire
 import Argo
 
-class TVFetcherServiceRemote : TVFetcherServiceProtocol {
+protocol TVFetcherService {
+    var countries: [WWCountry]? { get }
+    
+    func getChannelData(onCompletion: [WWCountry]? -> ())
+}
+
+class TVFetcherServiceRemote: TVFetcherService {
     
     var countries: [WWCountry]?
     
@@ -44,3 +50,4 @@ class TVFetcherServiceRemote : TVFetcherServiceProtocol {
     }
     
 }
+

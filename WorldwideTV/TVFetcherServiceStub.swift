@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TVFetcherServiceStub : TVFetcherServiceProtocol {
+class TVFetcherServiceStub: TVFetcherService {
     
     lazy var countries: [WWCountry]? = [
         WWCountry(title: "Portugal", channels: [

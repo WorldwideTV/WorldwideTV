@@ -2,7 +2,19 @@ import UIKit
 
 class CustomTabBarController: UITabBarController {
     
+    let channelsService: TVFetcherService
+    
     lazy var loadingOverlay: UIView = self.makeLoadingOverlay()
+    
+    init(channelsService: TVFetcherService) {
+        self.channelsService = channelsService
+        
+        super.init(nibName: .None, bundle: .None)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         super.loadView()
@@ -54,7 +66,7 @@ class CustomTabBarController: UITabBarController {
     }
     
     func fetchData() {
-        TVFetcherService.sharedInstance.getChannelData { countries in
+        channelsService.getChannelData { countries in
             if let obtainedCountries = countries where obtainedCountries.count > 0 {
                 self.loadingOverlay.removeFromSuperview()
                 

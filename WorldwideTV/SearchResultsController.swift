@@ -2,6 +2,18 @@ import UIKit
 
 class SearchResultsController: ChannelsListViewController, UISearchResultsUpdating {
     
+    let channelsService: TVFetcherService
+
+    init(channelsService: TVFetcherService) {
+        self.channelsService = channelsService
+        
+        super.init(nibName: .None, bundle: .None)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         super.loadView()
         view.backgroundColor = UIColor.purpleColor()
@@ -10,7 +22,7 @@ class SearchResultsController: ChannelsListViewController, UISearchResultsUpdati
     // UISearchResultsUpdating
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        guard let allCountries = TVFetcherService.sharedInstance.countries else {
+        guard let allCountries = channelsService.countries else {
             return
         }
         

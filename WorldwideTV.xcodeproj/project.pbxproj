@@ -29,8 +29,7 @@
 		B3FE8A821C7BD540006A9CC2 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1DA6E31C617898005979C1 /* SwiftyUserDefaults.framework */; };
 		DB1DA6E21C616E4C005979C1 /* AutomaticSortManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1DA6E11C616E4C005979C1 /* AutomaticSortManager.swift */; };
 		DBA46E2E1C5BA15B00146A27 /* WWChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */; };
-		DBB464131C5C22530067EC33 /* TVFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB464121C5C22530067EC33 /* TVFetcherService.swift */; };
-		E627ED8B1CBFC61F00B31045 /* TVFetcherServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627ED8A1CBFC61F00B31045 /* TVFetcherServiceRemote.swift */; };
+		DBB464131C5C22530067EC33 /* TVFetcherServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB464121C5C22530067EC33 /* TVFetcherServiceRemote.swift */; };
 		E627ED8D1CBFC82C00B31045 /* TVFetcherServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627ED8C1CBFC82C00B31045 /* TVFetcherServiceStub.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,8 +70,7 @@
 		DB1DA6E31C617898005979C1 /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/tvOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		DB56EF991C5C5185009E4900 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/tvOS/Kingfisher.framework; sourceTree = "<group>"; };
 		DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWChannels.swift; sourceTree = "<group>"; };
-		DBB464121C5C22530067EC33 /* TVFetcherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVFetcherService.swift; sourceTree = "<group>"; };
-		E627ED8A1CBFC61F00B31045 /* TVFetcherServiceRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVFetcherServiceRemote.swift; sourceTree = "<group>"; };
+		DBB464121C5C22530067EC33 /* TVFetcherServiceRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVFetcherServiceRemote.swift; sourceTree = "<group>"; };
 		E627ED8C1CBFC82C00B31045 /* TVFetcherServiceStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVFetcherServiceStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,8 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				DB1DA6E11C616E4C005979C1 /* AutomaticSortManager.swift */,
-				DBB464121C5C22530067EC33 /* TVFetcherService.swift */,
-				E627ED8A1CBFC61F00B31045 /* TVFetcherServiceRemote.swift */,
+				DBB464121C5C22530067EC33 /* TVFetcherServiceRemote.swift */,
 				E627ED8C1CBFC82C00B31045 /* TVFetcherServiceStub.swift */,
 			);
 			name = misc;
@@ -340,11 +337,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBB464131C5C22530067EC33 /* TVFetcherService.swift in Sources */,
+				DBB464131C5C22530067EC33 /* TVFetcherServiceRemote.swift in Sources */,
 				B3F7C29E1C5AE71C009298BA /* ChannelsListViewController.swift in Sources */,
 				DB1DA6E21C616E4C005979C1 /* AutomaticSortManager.swift in Sources */,
 				B3351DCC1C5C512100A65000 /* SettingsViewController.swift in Sources */,
-				E627ED8B1CBFC61F00B31045 /* TVFetcherServiceRemote.swift in Sources */,
 				E627ED8D1CBFC82C00B31045 /* TVFetcherServiceStub.swift in Sources */,
 				B3351DAD1C5C1EE500A65000 /* WWCountry.swift in Sources */,
 				B3351DAB1C5C1EDF00A65000 /* WWChannel.swift in Sources */,
