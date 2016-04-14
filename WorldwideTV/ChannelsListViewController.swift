@@ -8,6 +8,8 @@ private let cellReuseIdentifier = "cellReuseIdentifier"
 
 class ChannelsListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    var country: String!
+    
     var channels: [WWChannel]? {
         didSet {
             channelsCollectionView.reloadData()
@@ -91,7 +93,7 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         let channel = channels![indexPath.row]
         
         if let url = NSURL(string: channel.url) {
-            let videoController = VideoPlayerController(url: url)
+            let videoController = VideoPlayerController(url: url, channel: channel.title, country: self.country)
             print("I TAPPED on \(channel.title)")
             presentViewController(videoController, animated: true, completion: .None)
         }

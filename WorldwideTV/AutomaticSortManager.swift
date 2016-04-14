@@ -26,12 +26,23 @@ class AutomaticSortManager {
         Defaults[.launchCount]+=1
     }
     
-    func sumChannel(country: String, channel: String) {
-        // todo
+    func sumChannel(channel: String, ofCountry country: String) {
+        let key = keyForCountOfChannel(channel, ofCountry: country)
+        var accesses = Defaults.integerForKey(key)
+        accesses += 1
+        Defaults.setInteger(accesses, forKey: key)
     }
     
-    func getChannelCount(country: String, channel: String) {
-        // todo
+    func getChannelCount(channel: String, ofCountry country: String) -> Int {
+        return Defaults.integerForKey(keyForCountOfChannel(channel, ofCountry: country))
+    }
+    
+    func deleteChannelCount(channel: String, ofCountry country: String) {
+        Defaults.remove(keyForCountOfChannel(channel, ofCountry: country))
+    }
+    
+    private func keyForCountOfChannel(channel: String, ofCountry country: String) -> String {
+        return "Count-" + country + "-" + channel
     }
     
     
