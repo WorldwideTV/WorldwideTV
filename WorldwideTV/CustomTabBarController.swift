@@ -32,9 +32,7 @@ class CustomTabBarController: UITabBarController {
     func setupConstraints() {
         let views = ["loadingOverlay": loadingOverlay]
         
-        var constraints: [NSLayoutConstraint] = []
-        
-        constraints += NSLayoutConstraint.withFormat([
+        let constraints = NSLayoutConstraint.withFormat([
             "V:|[loadingOverlay]|",
             "H:|[loadingOverlay]|",
             ], views: views)

@@ -47,8 +47,7 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
     func setupConstraints() {
         let views = ["channelsCollectionView": channelsCollectionView]
         
-        var constraints: [NSLayoutConstraint] = []
-        constraints += NSLayoutConstraint.withFormat([
+        let constraints = NSLayoutConstraint.withFormat([
             "V:|[channelsCollectionView]|",
             "H:|[channelsCollectionView]|",
             ], views: views)

@@ -48,14 +48,13 @@ class CountriesViewController: UIViewController, UITableViewDataSource {
     func setupConstraints() {
         let views = ["countriesTableView": countriesTableView, "appLogo": appLogo]
         
-        var constraints: [NSLayoutConstraint] = []
-        constraints += NSLayoutConstraint.withFormat([
+        var constraints = NSLayoutConstraint.withFormat([
             "V:|-60-[appLogo(==100)]-60-[countriesTableView]-60-|",
             "H:|-90-[countriesTableView]-90-|",
             "H:[appLogo(==200)]",
         ], views: views)
         
-        constraints.append(appLogo.centeredInParentX())
+        constraints += [appLogo.centeredInParentX()]
         
         NSLayoutConstraint.activateConstraints(constraints)
     }

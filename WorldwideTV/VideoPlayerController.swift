@@ -13,6 +13,7 @@ class VideoPlayerController: UIViewController {
         self.url = url
         self.channel = channel
         self.country = country
+        
         super.init(nibName: .None, bundle: .None)
     }
 

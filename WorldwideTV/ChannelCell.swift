@@ -19,20 +19,18 @@ class ChannelCell: UICollectionViewCell {
     func setupSubviews() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(logoView)
-        
     }
     
     func setupConstraints() {
         let views = ["logoView": logoView, "titleLabel": titleLabel]
         
-        var constraints: [NSLayoutConstraint] = []
-        constraints += NSLayoutConstraint.withFormat([
+        var constraints = NSLayoutConstraint.withFormat([
             "V:|[logoView(==200)]",
             "V:[titleLabel]|",
             "H:|[logoView]|",
             ], views: views)
         
-        constraints.append(titleLabel.centeredInParentX())
+        constraints += [titleLabel.centeredInParentX()]
         
         NSLayoutConstraint.activateConstraints(constraints)
     }
