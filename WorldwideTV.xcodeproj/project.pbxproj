@@ -41,6 +41,7 @@
 		E627EDE51CC010FC00B31045 /* WWChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAA1C5C1EDF00A65000 /* WWChannel.swift */; };
 		E627EDE61CC010FC00B31045 /* WWCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAC1C5C1EE500A65000 /* WWCountry.swift */; };
 		E627EDE71CC0110700B31045 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A3EA1C5AF40D0017D048 /* Argo.framework */; };
+		E69D710F1CC03E8600710E22 /* WWTopShelfChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69D710E1CC03E8600710E22 /* WWTopShelfChannel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		E627EDD31CC0109F00B31045 /* TVServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TVServices.framework; path = System/Library/Frameworks/TVServices.framework; sourceTree = SDKROOT; };
 		E627EDD61CC0109F00B31045 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		E627EDD81CC0109F00B31045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E69D710E1CC03E8600710E22 /* WWTopShelfChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWTopShelfChannel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 		E627EDD51CC0109F00B31045 /* TopShelf */ = {
 			isa = PBXGroup;
 			children = (
+				E69D710E1CC03E8600710E22 /* WWTopShelfChannel.swift */,
 				E627EDD61CC0109F00B31045 /* ServiceProvider.swift */,
 				E627EDD81CC0109F00B31045 /* Info.plist */,
 			);
@@ -466,6 +469,7 @@
 				E627EDE11CC010FC00B31045 /* AutomaticSortManager.swift in Sources */,
 				E627EDE31CC010FC00B31045 /* TVFetcherServiceStub.swift in Sources */,
 				E627EDE41CC010FC00B31045 /* WWChannels.swift in Sources */,
+				E69D710F1CC03E8600710E22 /* WWTopShelfChannel.swift in Sources */,
 				E627EDE61CC010FC00B31045 /* WWCountry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,6 +704,7 @@
 				E627EDDD1CC0109F00B31045 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
