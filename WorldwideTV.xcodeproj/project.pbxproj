@@ -42,6 +42,18 @@
 		E627EDE61CC010FC00B31045 /* WWCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAC1C5C1EE500A65000 /* WWCountry.swift */; };
 		E627EDE71CC0110700B31045 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A3EA1C5AF40D0017D048 /* Argo.framework */; };
 		E69D710F1CC03E8600710E22 /* WWTopShelfChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69D710E1CC03E8600710E22 /* WWTopShelfChannel.swift */; };
+		E69D71111CC1011600710E22 /* NSURLComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69D71101CC1011600710E22 /* NSURLComponents+Utils.swift */; };
+		E69D71121CC1093F00710E22 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E627EDD61CC0109F00B31045 /* ServiceProvider.swift */; };
+		E69D71131CC10A1F00710E22 /* TVFetcherServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB464121C5C22530067EC33 /* TVFetcherServiceRemote.swift */; };
+		E69D71141CC10A2400710E22 /* AutomaticSortManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1DA6E11C616E4C005979C1 /* AutomaticSortManager.swift */; };
+		E69D71151CC10A2A00710E22 /* WWTopShelfChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69D710E1CC03E8600710E22 /* WWTopShelfChannel.swift */; };
+		E69D71161CC10A6100710E22 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB14A3E91C5AF40D0017D048 /* Alamofire.framework */; };
+		E69D71171CC10A7100710E22 /* WWChannels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA46E2D1C5BA15B00146A27 /* WWChannels.swift */; };
+		E69D71181CC10A7100710E22 /* WWChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAA1C5C1EDF00A65000 /* WWChannel.swift */; };
+		E69D71191CC10A7100710E22 /* WWCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3351DAC1C5C1EE500A65000 /* WWCountry.swift */; };
+		E69D711B1CC10EC400710E22 /* NSURL+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69D711A1CC10EC400710E22 /* NSURL+Utils.swift */; };
+		E69D711C1CC10FA600710E22 /* NSURL+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69D711A1CC10EC400710E22 /* NSURL+Utils.swift */; };
+		E69D711D1CC1102200710E22 /* NSURLComponents+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69D71101CC1011600710E22 /* NSURLComponents+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +121,8 @@
 		E627EDD61CC0109F00B31045 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		E627EDD81CC0109F00B31045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E69D710E1CC03E8600710E22 /* WWTopShelfChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWTopShelfChannel.swift; sourceTree = "<group>"; };
+		E69D71101CC1011600710E22 /* NSURLComponents+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLComponents+Utils.swift"; sourceTree = "<group>"; };
+		E69D711A1CC10EC400710E22 /* NSURL+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69D71161CC10A6100710E22 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +262,8 @@
 				DB1DA6E11C616E4C005979C1 /* AutomaticSortManager.swift */,
 				DBB464121C5C22530067EC33 /* TVFetcherServiceRemote.swift */,
 				E627ED8C1CBFC82C00B31045 /* TVFetcherServiceStub.swift */,
+				E69D71101CC1011600710E22 /* NSURLComponents+Utils.swift */,
+				E69D711A1CC10EC400710E22 /* NSURL+Utils.swift */,
 			);
 			name = misc;
 			sourceTree = "<group>";
@@ -349,6 +366,12 @@
 				TargetAttributes = {
 					B3F7C2971C5AE71C009298BA = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8FGVD93AT9;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					B3F7C2A81C5AE71D009298BA = {
 						CreatedOnToolsVersion = 7.2;
@@ -446,6 +469,8 @@
 				B3351DA91C5C0FDD00A65000 /* CountriesViewController.swift in Sources */,
 				B3351DA51C5C0B1000A65000 /* ChannelCell.swift in Sources */,
 				B3351DD01C5C5C8D00A65000 /* CustomTabBarController.swift in Sources */,
+				E69D711B1CC10EC400710E22 /* NSURL+Utils.swift in Sources */,
+				E69D71111CC1011600710E22 /* NSURLComponents+Utils.swift in Sources */,
 				DBA46E2E1C5BA15B00146A27 /* WWChannels.swift in Sources */,
 				B3F7C2B91C5AEB51009298BA /* VideoPlayerController.swift in Sources */,
 			);
@@ -455,7 +480,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69D71121CC1093F00710E22 /* ServiceProvider.swift in Sources */,
+				E69D71171CC10A7100710E22 /* WWChannels.swift in Sources */,
+				E69D711D1CC1102200710E22 /* NSURLComponents+Utils.swift in Sources */,
+				E69D71131CC10A1F00710E22 /* TVFetcherServiceRemote.swift in Sources */,
+				E69D71151CC10A2A00710E22 /* WWTopShelfChannel.swift in Sources */,
+				E69D71191CC10A7100710E22 /* WWCountry.swift in Sources */,
+				E69D71181CC10A7100710E22 /* WWChannel.swift in Sources */,
 				B3F7C2AE1C5AE71D009298BA /* WorldwideTVTests.swift in Sources */,
+				E69D711C1CC10FA600710E22 /* NSURL+Utils.swift in Sources */,
+				E69D71141CC10A2400710E22 /* AutomaticSortManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +610,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = WorldwideTV/WorldwideTV.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -584,8 +621,9 @@
 				);
 				INFOPLIST_FILE = WorldwideTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = WorldwideTV.WorldwideTV;
+				PRODUCT_BUNDLE_IDENTIFIER = WorldwideTV.WorldwideTV.ARib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
@@ -595,6 +633,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = WorldwideTV/WorldwideTV.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -603,8 +644,9 @@
 				);
 				INFOPLIST_FILE = WorldwideTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = WorldwideTV.WorldwideTV;
+				PRODUCT_BUNDLE_IDENTIFIER = WorldwideTV.WorldwideTV.ARib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
@@ -613,6 +655,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = WorldwideTVTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = WorldwideTV.WorldwideTVTests;
@@ -625,6 +671,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = WorldwideTVTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = WorldwideTV.WorldwideTVTests;

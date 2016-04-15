@@ -40,6 +40,10 @@ class ServiceProvider: NSObject, TVTopShelfProvider {
                     
                     wwcountry.channels.forEach { wwchannel in
                         
+                        let hits = ServiceProvider.hitManager.getChannelCount(wwchannel.title, ofCountry: wwcountry.title)
+                        
+                        NSLog("Channel \(wwchannel.title) Country \(wwcountry.title) Hits \(hits)")
+                        
                         let numberOfViews: Int = ServiceProvider.hitManager.getChannelCount(wwchannel.title, ofCountry: wwcountry.title)
                         
                         channels.append(
@@ -66,9 +70,13 @@ class ServiceProvider: NSObject, TVTopShelfProvider {
                         topShelfCategories.append(currentSection!)
                     }
                     
+                    let stream = self.urlForStream(channel.channel.url, ofChannel: channel.channel.title, ofCountry: channel.country)
+                    
                     let channelIdentifier = TVContentIdentifier(identifier: "channel-" + channel.channel.title, container: nil)!
                     let channelItem = TVContentItem(contentIdentifier: channelIdentifier)!
                     channelItem.imageURL = NSURL(string: channel.channel.thumbnail)
+                    channelItem.displayURL = stream
+                    channelItem.playURL = stream
                     
                     currentSection?.topShelfItems?.append(channelItem)
                 }
@@ -82,6 +90,16 @@ class ServiceProvider: NSObject, TVTopShelfProvider {
         }
         
         return topShelfCategories
+    }
+    
+    func urlForStream(streamUrl: String, ofChannel channel: String, ofCountry country: String) -> NSURL {
+        
+        let components = NSURLComponents()
+        components.scheme = "worldwidetv"
+        components.path = "/" + country + "/" + channel
+        components.queryItems = [NSURLQueryItem(name:"streamUrl", value: streamUrl)]
+        
+        return components.URL!
     }
 
 }

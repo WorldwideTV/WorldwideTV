@@ -24,6 +24,9 @@ class VideoPlayerController: UIViewController {
         super.viewDidLoad()
         
         sortManager.sumChannel(self.channel, ofCountry: self.country)
+        let totalhits = sortManager.getChannelCount(self.channel, ofCountry: self.country)
+        
+        NSLog("Total hits on \(channel) of \(country) is \(totalhits)")
         
         let player = AVPlayer(URL: url)
         let playerController = AVPlayerViewController()

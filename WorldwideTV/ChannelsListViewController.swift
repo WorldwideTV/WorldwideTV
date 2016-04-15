@@ -105,7 +105,10 @@ class ChannelsListViewController: UIViewController, UICollectionViewDataSource, 
         
         if let url = NSURL(string: channel.url) {
             let videoController = VideoPlayerController(sortManager: sortManager, url: url, channel: channel.title, country: self.country)
-            print("I TAPPED on \(channel.title)")
+            
+            let count =  sortManager.getChannelCount(channel.title, ofCountry: country)
+            
+            print("I TAPPED on \(channel.title) with total clicks of \(count)")
             presentViewController(videoController, animated: true, completion: .None)
         }
     }
