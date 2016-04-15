@@ -6,10 +6,11 @@ class CustomTabBarController: UITabBarController {
     
     lazy var loadingOverlay: UIView = self.makeLoadingOverlay()
     
-    init(channelsService: TVFetcherService) {
+    init(channelsService: TVFetcherService, viewControllers: [UIViewController]?) {
         self.channelsService = channelsService
-        
         super.init(nibName: .None, bundle: .None)
+        
+        self.viewControllers = viewControllers
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -21,7 +22,10 @@ class CustomTabBarController: UITabBarController {
         
         setupSubviews()
         setupConstraints()
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         fetchData()
     }
     

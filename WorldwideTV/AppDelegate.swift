@@ -34,9 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settingsViewController = SettingsViewController(nibName: .None, bundle: .None)
         settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: .None, tag: 0)
         
-        
-        let tabBarController = CustomTabBarController(channelsService: channelsService)
-        tabBarController.viewControllers = [homeViewController, searchViewNavController, settingsViewController]
+        let viewControllers = [homeViewController, searchViewNavController, settingsViewController]
+        let tabBarController = CustomTabBarController(channelsService: channelsService, viewControllers: viewControllers)
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
