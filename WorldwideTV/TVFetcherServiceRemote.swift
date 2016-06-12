@@ -29,7 +29,7 @@ class TVFetcherServiceRemote: TVFetcherService {
                 let json = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: [])
                 
                 if let j = json {
-                    let decodedWWTV = WWChannels.decode(JSON.parse(j))
+                    let decodedWWTV = WWChannels.decode(JSON(j))
                     self.countries = decodedWWTV.value?.countries
                     
                     onCompletion(self.countries)
