@@ -49,7 +49,7 @@ class CustomTabBarController: UITabBarController {
         v.translatesAutoresizingMaskIntoConstraints = false
         v.backgroundColor = UIColor.blackColor()
         
-        let startupImage = UIImageView(image: UIImage(named: "startup")!)
+        let startupImage = UIImageView(image: UIImage(named: "LaunchImage")!)
         startupImage.translatesAutoresizingMaskIntoConstraints = false
         v.addSubview(startupImage)
         
